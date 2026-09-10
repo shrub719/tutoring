@@ -27,6 +27,10 @@
             }
             h1 {
                 font-size: 4.5rem;
+                rotate: -4deg;
+                transition: rotate 0.2s;
+            }
+            h1.rotate {
                 rotate: 2deg;
             }
             h2 {
@@ -65,16 +69,30 @@
                 margin: 25px auto 25px auto;
                 display: block;
                 border: none;
+                transition: scale 0.2s;
+            }
+            button:hover {
+                scale: 1.02;
             }
             button:active {
-                transform: scale(0.95, 0.95);
+                scale: 0.95;
+            }
+            img {
+                display: block;
+                margin: 50px auto 0 auto;
+                width: 300px;
+                transition: rotate 0.2s, scale 0.2s;
+            }
+            img:hover {
+                rotate: 2deg;
+                scale: 1.02;
             }
         </style>
     </head>
     <body>
         <div>
             <h2>wanna get</h2>
-            <h1>ahead?</h1>
+            <h1 id="h1">ahead?</h1>
             <p>
                 online 1-to-1 a level maths + further maths tuition<br />
                 <span style="color: #ed6">£25 / hour</span>
@@ -88,6 +106,16 @@
                 <input type="text" name="email" required>
                 <button type="submit">send!</button>
             </form>
+
+            <img src="./info.png" />
         </div>
+
+        <script>
+            setTimeout(
+                () => {
+                    document.getElementById("h1").classList.add("rotate");
+                }, 1000
+            );
+        </script>
     </body>
 </html>
